@@ -1,3 +1,5 @@
+//Go through README and come here
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 
@@ -12,17 +14,17 @@ app.post('/', async(req, res) => {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'yaduveera26@gmail.com',
-                pass: 'Kalayaduveerachowdaiah'
+                user: 'yourmailid@gmail.com',
+                pass: 'type your password within this quotes'
             }
         });
         var mail = req.body.email;
         console.log(mail);
         var mailoptions = {
-            from: 'yaduveera26@gmail.com',
+            from: 'yourmailid@gmail.com',
             to: mail,
-            subject: 'OTP',
-            text: 'this is your OTP'
+            subject: 'OTP', //you can write whatever text you want
+            text: 'this is your OTP' //you can write whatever text you want
         };
         transporter.sendMail(mailoptions, function(error, info) {
             if (error)
